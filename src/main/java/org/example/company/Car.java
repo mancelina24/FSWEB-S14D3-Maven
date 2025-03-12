@@ -8,7 +8,7 @@ public class Car {
     private String name;
     private int wheels;
 
-    public Car(String name, int cylinders) {
+    public Car(int cylinders,String name) {
         this.name = name;
         this.cylinders = cylinders;
         this.engine = true;
@@ -33,6 +33,21 @@ public class Car {
         if (cylinders != car.cylinders) return false;// Silindir sayısı farklıysa false
         return name.equals(car.name); // İsim aynıysa true
     }
+    public String startEngine() {
+        System.out.println(getClass().getSimpleName());
+        return "the car's engine is starting";
+    }
+
+    public String accelerate() {
+
+        System.out.println(getClass().getSimpleName());
+        return "the car is accelerating";
+    }
+
+    public String brake() {
+        System.out.println(getClass().getSimpleName());
+        return "the car is braking";
+    }
 
 
     @Override
@@ -49,15 +64,5 @@ public class Car {
                 ", wheels=" + wheels +
                 '}';
     }
-    public String startEngine() {
-        return getClass().getSimpleName() + ": the car's engine is starting";
-    }
 
-    public String accelerate() {
-        return getClass().getSimpleName() + ": the car is accelerating";
-    }
-
-    public String brake() {
-        return getClass().getSimpleName() + ": the car is braking";
-    }
 }
